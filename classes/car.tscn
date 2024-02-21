@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://coa0k7irphlrs"]
+
+[ext_resource type="Script" path="res://classes/car.gd" id="1_un06v"]
+[ext_resource type="Texture2D" uid="uid://tikuuohetxd0" path="res://assets/CAR_PLACEHOLDER_CLOSED.png" id="2_34u38"]
+[ext_resource type="PackedScene" uid="uid://di11arkaki8vf" path="res://classes/car_part.tscn" id="2_uc5g2"]
+[ext_resource type="Texture2D" uid="uid://crpo5wh3mq7jc" path="res://assets/BATTERY.png" id="2_xsl4b"]
+[ext_resource type="Texture2D" uid="uid://dv2hpy27pi8vk" path="res://assets/ENGINE.png" id="3_f785x"]
+[ext_resource type="Texture2D" uid="uid://daw8jag7rwmjm" path="res://assets/RADIATOR.png" id="4_try4f"]
+[ext_resource type="Texture2D" uid="uid://c5edll5ol5yxy" path="res://assets/WATER_RESERVOIR.png" id="6_fm3y1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0fpd"]
+size = Vector2(1001, 401)
+
+[node name="Car" type="Node2D"]
+z_index = 20
+script = ExtResource("1_un06v")
+
+[node name="CarBody" type="Sprite2D" parent="."]
+texture = ExtResource("2_34u38")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+input_pickable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1.5, 74.5)
+shape = SubResource("RectangleShape2D_d0fpd")
+
+[node name="Engine" parent="." instance=ExtResource("2_uc5g2")]
+texture = ExtResource("3_f785x")
+
+[node name="CollisionPolygon2D" parent="Engine/StaticBody2D" index="0"]
+polygon = PackedVector2Array(151, -25, 191, 128, 156, 158, -150, 159, -188, 132, -143, -39, -77, -52, -64, -64, 57, -63, 87, -77, 120, -68, 122, -44, 147, -38)
+
+[node name="Radiator" parent="." instance=ExtResource("2_uc5g2")]
+texture = ExtResource("4_try4f")
+
+[node name="CollisionPolygon2D" parent="Radiator/StaticBody2D" index="0"]
+polygon = PackedVector2Array(-224, 163, -232, 190, -224, 225, 224, 225, 235, 188, 216, 160)
+
+[node name="Water reservoir" parent="." instance=ExtResource("2_uc5g2")]
+texture = ExtResource("6_fm3y1")
+
+[node name="CollisionPolygon2D" parent="Water reservoir/StaticBody2D" index="0"]
+polygon = PackedVector2Array(-158, -33, -177, 9, -190, 19, -261, 21, -279, 16, -289, -4, -287, -21, -276, -41, -208, -79, -167, -78)
+
+[node name="Battery" parent="." instance=ExtResource("2_uc5g2")]
+texture = ExtResource("2_xsl4b")
+
+[node name="CollisionPolygon2D" parent="Battery/StaticBody2D" index="0"]
+polygon = PackedVector2Array(294, -37, 313, 12, 311, 38, 278, 74, 225, 77, 197, 14, 202, -53, 266, -57)
+
+[connection signal="mouse_entered" from="StaticBody2D" to="." method="_on_static_body_2d_mouse_entered"]
+[connection signal="mouse_exited" from="StaticBody2D" to="." method="_on_static_body_2d_mouse_exited"]
+
+[editable path="Engine"]
+[editable path="Radiator"]
+[editable path="Water reservoir"]
+[editable path="Battery"]

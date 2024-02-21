@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdge3xegix4gd"]
+
+[ext_resource type="PackedScene" uid="uid://coa0k7irphlrs" path="res://classes/car.tscn" id="1_xteds"]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Car" parent="." instance=ExtResource("1_xteds")]
+position = Vector2(1036, 598)
