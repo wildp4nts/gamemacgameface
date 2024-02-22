@@ -30,3 +30,7 @@ func _on_static_body_2d_mouse_entered():
 
 func _on_static_body_2d_mouse_exited():
 	mouse_in = false
+
+
+func _on_engine_clicked_on():
+	print("clicked on") # Replace with function body.

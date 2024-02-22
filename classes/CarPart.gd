@@ -16,6 +16,7 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("mouse_click") and mouse_in:
 		print(get_name())
+		clicked_on.emit()
 
 
 func _on_static_body_2d_mouse_entered():

@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://bwqxilbuycupc"]
+
+[ext_resource type="Texture2D" uid="uid://bv7rkt6pjmijf" path="res://assets/Bdrop.png" id="1_a5s0g"]
+[ext_resource type="Texture2D" uid="uid://b40tv2bquvdjq" path="res://assets/GOSE/Ghost1.png" id="2_o54ih"]
+
+[sub_resource type="Curve" id="Curve_xjxva"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 360), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_yc4yu"]
+curve = SubResource("Curve_xjxva")
+
+[sub_resource type="Curve" id="Curve_y1078"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_osqn7"]
+curve = SubResource("Curve_y1078")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vkwrt"]
+particle_flag_disable_z = true
+angle_min = -50.0
+angle_curve = SubResource("CurveTexture_yc4yu")
+orbit_velocity_min = -0.25
+orbit_velocity_max = 0.25
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_osqn7")
+turbulence_noise_speed = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4mkfb"]
+radius = 140.228
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(645, 299)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+process_material = SubResource("ParticleProcessMaterial_vkwrt")
+texture = ExtResource("1_a5s0g")
+fixed_fps = 24
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_o54ih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4mkfb")
