@@ -58,7 +58,6 @@ polygon = PackedVector2Array(404, 263, 400, 380, 471, 382, 481, 227)
 
 [connection signal="mouse_entered" from="StaticBody2D" to="." method="_on_static_body_2d_mouse_entered"]
 [connection signal="mouse_exited" from="StaticBody2D" to="." method="_on_static_body_2d_mouse_exited"]
-[connection signal="clicked_on" from="Engine" to="." method="_on_engine_clicked_on"]
 
 [editable path="Engine"]
 [editable path="Radiator"]

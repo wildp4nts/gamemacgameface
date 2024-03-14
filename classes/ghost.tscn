@@ -27,16 +27,21 @@ angle_curve = SubResource("CurveTexture_yc4yu")
 orbit_velocity_min = -0.25
 orbit_velocity_max = 0.25
 gravity = Vector3(0, 0, 0)
+scale_min = 0.8
 scale_curve = SubResource("CurveTexture_osqn7")
 turbulence_noise_speed = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4mkfb"]
 radius = 140.228
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["enemy"]]
 position = Vector2(645, 299)
 input_pickable = true
 script = ExtResource("1_exl8r")
+x_speed = 4.0
+y_speed = 4.0
+x_threshold = 2.0
+y_threshold = 2.0
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 process_material = SubResource("ParticleProcessMaterial_vkwrt")

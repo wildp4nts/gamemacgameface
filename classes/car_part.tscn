@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://classes/CarPart.gd" id="1_kpwxk"]
 
-[node name="CarPart" type="Sprite2D" groups=["visible_after_opening"]]
+[node name="CarPart" type="Sprite2D" groups=["car_part", "visible_after_opening"]]
 visible = false
 script = ExtResource("1_kpwxk")
 
