@@ -15,10 +15,14 @@ var timer : Timer
 
 @export var y_threshold : float
 
+var window_id: int
+
 func _ready():
 	timer = get_node("Timer")
 	timer.set_paused(true);
 	get_node("Sprite2D").texture = load("res://assets/GOSE/Ghost" + str(randi_range(1,4)) + ".png")
+	#random spawn position
+	position = Vector2(randi_range((-1)*get_window().size.x+1,get_window().size.x-1), randi_range((-1)*get_window().size.y+1,get_window().size.y-1))
 
 func _process(_delta):
 	if !timer.is_stopped():
@@ -30,10 +34,10 @@ func _process(_delta):
 	var position_x = self.position.x + get_node("Sprite2D").texture.get_width()
 	
 	#TODO: fix odrazeni
-	if((self.position.x + get_node("Sprite2D").texture.get_width()/2) > DisplayServer.window_get_size().x || (self.position.x - get_node("Sprite2D").texture.get_width()/2) < 0):
+	if(self.position.x > get_window().size.x || self.position.x < (-1)*get_window().size.x):
 		x_speed *= -1
 	
-	if((self.position.y + get_node("Sprite2D").texture.get_height()/2) > DisplayServer.window_get_size().y || (self.position.y - get_node("Sprite2D").texture.get_height()/2) < 0):
+	if(self.position.y > get_window().size.y || self.position.y < (-1)*get_window().size.y):
 		y_speed *= -1
 	
 	self.position += Vector2(x_speed,y_speed)

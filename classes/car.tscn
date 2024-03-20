@@ -15,6 +15,7 @@ size = Vector2(1001, 401)
 [node name="Car" type="Node2D"]
 z_index = 20
 script = ExtResource("1_un06v")
+min_enemies_count = 2
 
 [node name="CarBody" type="Sprite2D" parent="."]
 texture = ExtResource("2_34u38")
