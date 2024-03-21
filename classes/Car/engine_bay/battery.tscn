@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhgawi6hitohc"]
+
+[ext_resource type="Texture2D" uid="uid://cyesrauhhrrqn" path="res://assets/CAR/ENGINEBAY/BATTERY/MAIN.png" id="1_ndtlm"]
+[ext_resource type="Script" path="res://classes/Car/engine_bay/normal_to_bitmap.gd" id="2_ovvnw"]
+[ext_resource type="Texture2D" uid="uid://c55ac1hkkel5h" path="res://assets/CAR/ENGINEBAY/BATTERY/WIRES.png" id="3_8d01t"]
+[ext_resource type="Texture2D" uid="uid://cnsy0smq86kmi" path="res://assets/CAR/ENGINEBAY/BATTERY/BRACKET.png" id="3_iile3"]
+[ext_resource type="Texture2D" uid="uid://o6ywhcruouvy" path="res://assets/CAR/ENGINEBAY/BATTERY/STICKER.png" id="4_cb15t"]
+
+[sub_resource type="BitMap" id="BitMap_yyn1y"]
+
+[node name="Battery" type="TextureButton"]
+texture_normal = ExtResource("1_ndtlm")
+texture_click_mask = SubResource("BitMap_yyn1y")
+script = ExtResource("2_ovvnw")
+node_name = "wires"
+
+[node name="wires" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_8d01t")
+centered = false
+
+[node name="bracket" type="Sprite2D" parent="."]
+texture = ExtResource("3_iile3")
+centered = false
+
+[node name="sticker" type="Sprite2D" parent="."]
+texture = ExtResource("4_cb15t")
+centered = false
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

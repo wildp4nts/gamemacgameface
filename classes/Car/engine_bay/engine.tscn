@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6eqoqwbjs5f4"]
+
+[ext_resource type="Texture2D" uid="uid://cpn2h42ele3qu" path="res://assets/CAR/ENGINEBAY/ENGINE1/BASE.png" id="1_ilj1f"]
+[ext_resource type="Script" path="res://classes/Car/engine_bay/normal_to_bitmap.gd" id="2_ah40j"]
+[ext_resource type="Texture2D" uid="uid://c5c5vtkx4pvie" path="res://assets/CAR/ENGINEBAY/ENGINE1/UPPER.png" id="3_j31s2"]
+[ext_resource type="Texture2D" uid="uid://cwbi1wxvu607f" path="res://assets/CAR/ENGINEBAY/ENGINE1/COVER1.png" id="4_iemoh"]
+
+[sub_resource type="BitMap" id="BitMap_gkld7"]
+
+[node name="Engine" type="TextureButton"]
+texture_normal = ExtResource("1_ilj1f")
+texture_click_mask = SubResource("BitMap_gkld7")
+script = ExtResource("2_ah40j")
+node_name = "cover"
+
+[node name="upper" type="Sprite2D" parent="."]
+texture = ExtResource("3_j31s2")
+centered = false
+
+[node name="cover" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_iemoh")
+centered = false
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -19,7 +19,7 @@ func _ready():
 	var car_parts : Array[Node] = get_tree().get_nodes_in_group("car_part")
 	enemies_to_spawn = randi_range(min_enemies_count, car_parts.size())
 	enemies_to_defeat = enemies_to_spawn
-	print(enemies_to_defeat)
+	print("enemies:" + str(enemies_to_defeat))
 	for car_part in car_parts:
 		car_part.clicked_on.connect(_on_clicked_on_part)
 
@@ -45,8 +45,8 @@ func _on_static_body_2d_mouse_exited():
 	mouse_in = false
 
 
-func _on_clicked_on_part():
-	if (enemies_to_spawn <= 0): 
+func _on_clicked_on_part(already_clicked_on : bool):
+	if (enemies_to_spawn <= 0 || already_clicked_on):
 		return
 	
 	var instance : Node = enemies[randi_range(0,enemies.size() - 1)].instantiate()

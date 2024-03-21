@@ -19,26 +19,17 @@ var window_id: int
 
 func _ready():
 	timer = get_node("Timer")
-	timer.set_paused(true);
+	timer.set_paused(true)
 	get_node("Sprite2D").texture = load("res://assets/GOSE/Ghost" + str(randi_range(1,4)) + ".png")
-	#random spawn position
-	position = Vector2(randi_range((-1)*get_window().size.x+1,get_window().size.x-1), randi_range((-1)*get_window().size.y+1,get_window().size.y-1))
+	#random spawn position TODO
+	position = Vector2(randi_range((-1)*get_viewport().size.x+1,get_viewport().size.x-1), randi_range((-1)*get_viewport().size.y+1,get_viewport().size.y-1))
 
-func _process(_delta):
+func _process(delta):
 	if !timer.is_stopped():
 		modulate = Color(1,1,1,timer.time_left/timer.wait_time)
 	
-	x_speed += randf_range(-x_threshold,x_threshold)
-	y_speed += randf_range(-y_threshold,y_threshold)
-	
-	var position_x = self.position.x + get_node("Sprite2D").texture.get_width()
-	
-	#TODO: fix odrazeni
-	if(self.position.x > get_window().size.x || self.position.x < (-1)*get_window().size.x):
-		x_speed *= -1
-	
-	if(self.position.y > get_window().size.y || self.position.y < (-1)*get_window().size.y):
-		y_speed *= -1
+	x_speed += randf_range(-x_threshold,x_threshold)*delta
+	y_speed += randf_range(-y_threshold,y_threshold)*delta
 	
 	self.position += Vector2(x_speed,y_speed)
 

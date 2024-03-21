@@ -1,9 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdge3xegix4gd"]
+[gd_scene load_steps=5 format=3 uid="uid://cdge3xegix4gd"]
 
-[ext_resource type="PackedScene" uid="uid://coa0k7irphlrs" path="res://classes/car.tscn" id="1_xteds"]
+[ext_resource type="Script" path="res://game_scene.gd" id="1_nrm5f"]
+[ext_resource type="PackedScene" uid="uid://coa0k7irphlrs" path="res://classes/car_old.tscn" id="1_xteds"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_so5xd"]
+size = Vector2(48, 1322)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4e5c"]
+size = Vector2(2336, 20)
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2(0.5, 0.5)
+script = ExtResource("1_nrm5f")
 
 [node name="Car" parent="." instance=ExtResource("1_xteds")]
 position = Vector2(1036, 598)
+
+[node name="left" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left"]
+position = Vector2(14, 651)
+shape = SubResource("RectangleShape2D_so5xd")
+
+[node name="right" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right"]
+position = Vector2(2296, 654)
+shape = SubResource("RectangleShape2D_so5xd")
+
+[node name="up" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="up"]
+position = Vector2(1158, 0)
+shape = SubResource("RectangleShape2D_q4e5c")
+
+[node name="down" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="down"]
+position = Vector2(1158, 1298)
+shape = SubResource("RectangleShape2D_q4e5c")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://coa0k7irphlrs"]
 
-[ext_resource type="Script" path="res://classes/car.gd" id="1_un06v"]
+[ext_resource type="Script" path="res://classes/car_old.gd" id="1_un06v"]
 [ext_resource type="Texture2D" uid="uid://tikuuohetxd0" path="res://assets/CAR_PLACEHOLDER_CLOSED.png" id="2_34u38"]
 [ext_resource type="PackedScene" uid="uid://di11arkaki8vf" path="res://classes/car_part.tscn" id="2_uc5g2"]
 [ext_resource type="Texture2D" uid="uid://crpo5wh3mq7jc" path="res://assets/BATTERY.png" id="2_xsl4b"]

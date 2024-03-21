@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://phnj1vgcko4p"]
+
+[ext_resource type="Texture2D" uid="uid://c84hr2qmmifl2" path="res://assets/CAR/ENGINEBAY/WATERTANK/WATERTANK.png" id="1_io7qh"]
+[ext_resource type="Script" path="res://classes/Car/engine_bay/normal_to_bitmap.gd" id="2_gmyrv"]
+[ext_resource type="Texture2D" uid="uid://c6drhtr3vkvmv" path="res://assets/CAR/ENGINEBAY/WATERTANK/CAP.png" id="3_cip3d"]
+
+[sub_resource type="BitMap" id="BitMap_uj843"]
+
+[node name="Watertank" type="TextureButton"]
+texture_normal = ExtResource("1_io7qh")
+texture_click_mask = SubResource("BitMap_uj843")
+script = ExtResource("2_gmyrv")
+node_name = "cap"
+
+[node name="cap" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_cip3d")
+centered = false
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

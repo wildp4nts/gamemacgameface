@@ -4,6 +4,8 @@ extends Sprite2D
 
 signal clicked_on
 
+var already_clicked_on : bool = false
+
 var mouse_in : bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -15,7 +17,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_just_pressed("mouse_click") and mouse_in:
-		clicked_on.emit()
+		clicked_on.emit(already_clicked_on)
+		already_clicked_on = true
 
 
 func _on_static_body_2d_mouse_entered():

@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhwdo8wn1d4jx"]
+
+[ext_resource type="Texture2D" uid="uid://tdp6gx8m5ri5" path="res://assets/CAR/ENGINEBAY/BAY.png" id="1_dje1w"]
+[ext_resource type="Texture2D" uid="uid://oirrgvpwfrrd" path="res://assets/CAR/ENGINEBAY/BAYFRONT.png" id="2_ogig3"]
+[ext_resource type="PackedScene" uid="uid://fgge3d5dmw8x" path="res://classes/Car/engine_bay/fusebox.tscn" id="2_pyp8o"]
+[ext_resource type="PackedScene" uid="uid://bhgawi6hitohc" path="res://classes/Car/engine_bay/battery.tscn" id="3_nw4y2"]
+[ext_resource type="PackedScene" uid="uid://c6eqoqwbjs5f4" path="res://classes/Car/engine_bay/engine.tscn" id="4_iwcl1"]
+[ext_resource type="PackedScene" uid="uid://c4ri82rg5jd77" path="res://classes/Car/engine_bay/radiator.tscn" id="5_n321p"]
+[ext_resource type="PackedScene" uid="uid://phnj1vgcko4p" path="res://classes/Car/engine_bay/watertank.tscn" id="6_wg2m0"]
+
+[node name="Engine Bay" type="Node2D"]
+
+[node name="bay" type="Sprite2D" parent="."]
+texture = ExtResource("1_dje1w")
+centered = false
+
+[node name="Battery" parent="." instance=ExtResource("3_nw4y2")]
+offset_right = 1024.0
+offset_bottom = 1024.0
+
+[node name="Fusebox" parent="." instance=ExtResource("2_pyp8o")]
+
+[node name="Engine" parent="." instance=ExtResource("4_iwcl1")]
+
+[node name="Radiator" parent="." instance=ExtResource("5_n321p")]
+
+[node name="Watertank" parent="." instance=ExtResource("6_wg2m0")]
+
+[node name="bay_front" type="Sprite2D" parent="."]
+texture = ExtResource("2_ogig3")
+centered = false
