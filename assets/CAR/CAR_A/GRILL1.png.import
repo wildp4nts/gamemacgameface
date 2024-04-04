@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7oak45nj65s1"
-path="res://.godot/imported/Blinkers.png-5d99d8fd99b5c0e1765b0cd46924ab67.ctex"
+uid="uid://cprynrq7k7xj"
+path="res://.godot/imported/GRILL1.png-22658f24d74d7bccb419048c312832f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CAR/CAR_A/Blinkers.png"
-dest_files=["res://.godot/imported/Blinkers.png-5d99d8fd99b5c0e1765b0cd46924ab67.ctex"]
+source_file="res://assets/CAR/CAR_A/GRILL1.png"
+dest_files=["res://.godot/imported/GRILL1.png-22658f24d74d7bccb419048c312832f2.ctex"]
 
 [params]
 

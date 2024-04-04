@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8pcvoohjxnui"
-path="res://.godot/imported/MAIN.png-49c774c5d9dc4b658e00cae21e70f0b6.ctex"
+uid="uid://b7oak45nj65s1"
+path="res://.godot/imported/BLINKERS.png-3feb627da8b262535219cd571935fea0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CAR/CAR_C/MAIN.png"
-dest_files=["res://.godot/imported/MAIN.png-49c774c5d9dc4b658e00cae21e70f0b6.ctex"]
+source_file="res://assets/CAR/CAR_A/BLINKERS.png"
+dest_files=["res://.godot/imported/BLINKERS.png-3feb627da8b262535219cd571935fea0.ctex"]
 
 [params]
 

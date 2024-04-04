@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7djw3yax2s0m"
-path="res://.godot/imported/HEADLIGHTS.png-0d0b77122a081a55adc10e994b8beab9.ctex"
+uid="uid://7c4n6ywn1fcm"
+path="res://.godot/imported/GRILL1.png-84b03fcaee730a53093b85298737af71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CAR/CAR_C/HEADLIGHTS.png"
-dest_files=["res://.godot/imported/HEADLIGHTS.png-0d0b77122a081a55adc10e994b8beab9.ctex"]
+source_file="res://assets/CAR/CAR_B/GRILL1.png"
+dest_files=["res://.godot/imported/GRILL1.png-84b03fcaee730a53093b85298737af71.ctex"]
 
 [params]
 

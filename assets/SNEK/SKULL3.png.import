@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd5gu3egtvum0"
-path="res://.godot/imported/MAIN.png-58f5a2399291278f4d0f236281bf83ed.ctex"
+uid="uid://c3gora6swvjff"
+path="res://.godot/imported/SKULL3.png-9cc00e87ab85d4308f6b5811de5ae99a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CAR/CAR_B/MAIN.png"
-dest_files=["res://.godot/imported/MAIN.png-58f5a2399291278f4d0f236281bf83ed.ctex"]
+source_file="res://assets/SNEK/SKULL3.png"
+dest_files=["res://.godot/imported/SKULL3.png-9cc00e87ab85d4308f6b5811de5ae99a.ctex"]
 
 [params]
 

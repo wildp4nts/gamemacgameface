@@ -15,14 +15,15 @@ var timer : Timer
 
 @export var y_threshold : float
 
+@export var max_speed : int
+
 var window_id: int
 
 func _ready():
 	timer = get_node("Timer")
 	timer.set_paused(true)
 	get_node("Sprite2D").texture = load("res://assets/GOSE/Ghost" + str(randi_range(1,4)) + ".png")
-	#random spawn position TODO
-	position = Vector2(randi_range((-1)*get_viewport().size.x+1,get_viewport().size.x-1), randi_range((-1)*get_viewport().size.y+1,get_viewport().size.y-1))
+	position = Vector2(randi_range(150,get_viewport().size.x-150), randi_range(150,get_viewport().size.y-150)) #150 je zde aby se nespawnovali v hranicích okna, neni to ideal, ale funguje +-
 
 func _process(delta):
 	if !timer.is_stopped():
@@ -30,6 +31,11 @@ func _process(delta):
 	
 	x_speed += randf_range(-x_threshold,x_threshold)*delta
 	y_speed += randf_range(-y_threshold,y_threshold)*delta
+	
+	if (x_speed > max_speed):
+		x_speed = max_speed
+	if (y_speed > max_speed):
+		y_speed = max_speed
 	
 	self.position += Vector2(x_speed,y_speed)
 

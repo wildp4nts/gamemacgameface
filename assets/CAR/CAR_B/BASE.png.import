@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xcj8av0t26i8"
-path="res://.godot/imported/GRILL.png-e69035e75cb047cc8f6169b2a0d2e47d.ctex"
+uid="uid://bd5gu3egtvum0"
+path="res://.godot/imported/BASE.png-e69745f4978812a5db1a0081d5280a22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CAR/CAR_C/GRILL.png"
-dest_files=["res://.godot/imported/GRILL.png-e69035e75cb047cc8f6169b2a0d2e47d.ctex"]
+source_file="res://assets/CAR/CAR_B/BASE.png"
+dest_files=["res://.godot/imported/BASE.png-e69745f4978812a5db1a0081d5280a22.ctex"]
 
 [params]
 

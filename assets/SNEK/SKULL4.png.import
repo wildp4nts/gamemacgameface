@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbdiauoyyk57r"
-path="res://.godot/imported/INDICATORS.png-2e2409aaa44440043ba302e2a361eb4b.ctex"
+uid="uid://kd1thla1n2rh"
+path="res://.godot/imported/SKULL4.png-b0a31661dc73d9e8bd7b094e416ab746.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CAR/CAR_C/INDICATORS.png"
-dest_files=["res://.godot/imported/INDICATORS.png-2e2409aaa44440043ba302e2a361eb4b.ctex"]
+source_file="res://assets/SNEK/SKULL4.png"
+dest_files=["res://.godot/imported/SKULL4.png-b0a31661dc73d9e8bd7b094e416ab746.ctex"]
 
 [params]
 
