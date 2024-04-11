@@ -4,6 +4,8 @@ var engine_parts_count : int
 
 signal clicked_on
 
+signal fixed
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var engine_parts : Array[Node] = get_tree().get_nodes_in_group("engine_part")
@@ -13,3 +15,6 @@ func _ready():
 
 func _on_pressed():
 	clicked_on.emit()
+	engine_parts_count -= 1
+	if (engine_parts_count == 0):
+		fixed.emit()

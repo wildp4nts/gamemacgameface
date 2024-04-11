@@ -21,6 +21,7 @@ func _ready():
 	get_node("down").body_entered.connect(_on_y_body_entered)
 	var engine = get_node("Car/Engine Bay")
 	engine.clicked_on.connect(_on_clicked_on_engine)
+	engine.fixed.connect(_on_fixed_engine)
 
 	enemies_to_spawn = randi_range(min_enemies_count, engine.engine_parts_count)
 	enemies_to_defeat = enemies_to_spawn
@@ -43,7 +44,7 @@ func _on_clicked_on_engine():
 	instance.defeated.connect(enemy_defeated)
 	enemies_to_spawn -= 1
 	enemies_on_screen += 1
-	Input.set_custom_mouse_cursor(hand_cross)
+	Input.set_custom_mouse_cursor(hand_cross,Input.CURSOR_ARROW,Vector2(111,60))
 
 func enemy_defeated(instance):
 	instance.queue_free()
@@ -58,4 +59,8 @@ func enemy_defeated(instance):
 	get_node("AudioStreamDefeat").play()
 	
 	if (enemies_to_defeat == 0):
-		print("defeated all enemies")
+		$Notepad/LabelGhosts/StrikeThrough.visible = true
+		$Notepad/LabelRemaing.text = "Remaining: 0"
+
+func _on_fixed_engine():
+	$Notepad/LabelCar/StrikeThrough.visible = true
