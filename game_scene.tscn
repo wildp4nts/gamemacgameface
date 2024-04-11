@@ -48,3 +48,5 @@ position = Vector2(644, 239)
 position = Vector2(580, 360)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_3x560")
+
+[node name="AudioStreamDefeat" type="AudioStreamPlayer" parent="."]

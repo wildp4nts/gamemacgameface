@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgesl7km6nkgd"
-path="res://.godot/imported/HAND2.png-314b01c55e0f501822c251faf8d8ef31.ctex"
+uid="uid://dn0wtahk7rtiy"
+path="res://.godot/imported/HAND_CROSS.png-8c327cf9b6d6928787fda39fd8f9473a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://HAND2.png"
-dest_files=["res://.godot/imported/HAND2.png-314b01c55e0f501822c251faf8d8ef31.ctex"]
+source_file="res://assets/HAND_CROSS.png"
+dest_files=["res://.godot/imported/HAND_CROSS.png-8c327cf9b6d6928787fda39fd8f9473a.ctex"]
 
 [params]
 

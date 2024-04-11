@@ -6,9 +6,15 @@ var enemies_to_spawn : int
 
 var enemies_to_defeat : int
 
+var enemies_on_screen : int = 0
+
 var enemies : Array[Resource] = [preload("res://classes/ghost.tscn")]
 
+var hand : Resource = preload("res://assets/HAND.png")
+var hand_cross : Resource = preload("res://assets/HAND_CROSS.png")
+
 func _ready():
+	Input.set_custom_mouse_cursor(hand)
 	get_node("left").body_entered.connect(_on_x_body_entered)
 	get_node("right").body_entered.connect(_on_x_body_entered)
 	get_node("up").body_entered.connect(_on_y_body_entered)
@@ -17,7 +23,6 @@ func _ready():
 	engine.clicked_on.connect(_on_clicked_on_engine)
 
 	enemies_to_spawn = randi_range(min_enemies_count, engine.engine_parts_count)
-	print(enemies_to_spawn)
 	enemies_to_defeat = enemies_to_spawn
 
 
@@ -37,11 +42,20 @@ func _on_clicked_on_engine():
 	add_child(instance)
 	instance.defeated.connect(enemy_defeated)
 	enemies_to_spawn -= 1
-
+	enemies_on_screen += 1
+	Input.set_custom_mouse_cursor(hand_cross)
 
 func enemy_defeated(instance):
 	instance.queue_free()
-	print("defeated")
 	enemies_to_defeat -= 1
+	enemies_on_screen -= 1
+	
+	if (enemies_on_screen == 0):
+		Input.set_custom_mouse_cursor(hand)
+	
+	get_node("AudioStreamDefeat").stream = load("res://assets/noises/ghost_end" + str(randi_range(1,3)) + ".mp3")
+	get_node("AudioStreamDefeat").stream.loop = false
+	get_node("AudioStreamDefeat").play()
+	
 	if (enemies_to_defeat == 0):
 		print("defeated all enemies")

@@ -24,6 +24,11 @@ func _ready():
 	timer.set_paused(true)
 	get_node("Sprite2D").texture = load("res://assets/GOSE/Ghost" + str(randi_range(1,4)) + ".png")
 	position = Vector2(randi_range(150,get_viewport().size.x-150), randi_range(150,get_viewport().size.y-150)) #150 je zde aby se nespawnovali v hranicích okna, neni to ideal, ale funguje +-
+	
+	get_node("AudioStreamPlayer").stream = load("res://assets/noises/ghost" + str(randi_range(1,6)) + ".mp3")
+	get_node("AudioStreamPlayer").stream.loop = false
+	get_node("AudioStreamPlayer").play()
+
 
 func _process(delta):
 	if !timer.is_stopped():
