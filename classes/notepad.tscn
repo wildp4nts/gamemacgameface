@@ -37,12 +37,15 @@ vertical_alignment = 1
 
 [node name="StrikeThrough" type="ColorRect" parent="LabelCar"]
 visible = false
+layout_mode = 0
 offset_left = -8.0
 offset_top = 19.0
 offset_right = 178.0
 offset_bottom = 24.0
+color = Color(0.87451, 0.866667, 0.901961, 1)
 
 [node name="ColorRect" type="ColorRect" parent="LabelCar/StrikeThrough"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 185.0
@@ -61,12 +64,15 @@ vertical_alignment = 1
 
 [node name="StrikeThrough" type="ColorRect" parent="LabelGhosts"]
 visible = false
+layout_mode = 0
 offset_left = -8.0
 offset_top = 19.0
 offset_right = 178.0
 offset_bottom = 24.0
+color = Color(0.87451, 0.866667, 0.901961, 1)
 
 [node name="ColorRect" type="ColorRect" parent="LabelGhosts/StrikeThrough"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 185.0

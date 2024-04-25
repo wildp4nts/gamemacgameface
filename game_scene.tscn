@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdge3xegix4gd"]
+[gd_scene load_steps=8 format=3 uid="uid://cdge3xegix4gd"]
 
 [ext_resource type="Script" path="res://game_scene.gd" id="1_nrm5f"]
+[ext_resource type="PackedScene" uid="uid://cxbvten6hicg6" path="res://classes/reset_notepad.tscn" id="2_45w5m"]
 [ext_resource type="PackedScene" uid="uid://dqexsgwolxlno" path="res://classes/Car/car.tscn" id="2_cib0n"]
 [ext_resource type="Texture2D" uid="uid://mkxu310r8te0" path="res://assets/BGGGGG.png" id="3_3x560"]
 [ext_resource type="PackedScene" uid="uid://bxgvxbxln7vvd" path="res://classes/notepad.tscn" id="4_klrvp"]
@@ -55,3 +56,7 @@ texture = ExtResource("3_3x560")
 [node name="Notepad" parent="." instance=ExtResource("4_klrvp")]
 position = Vector2(1690, -52)
 scale = Vector2(1.67188, 1.67188)
+
+[node name="ResetNotepad" parent="." instance=ExtResource("2_45w5m")]
+position = Vector2(1160, 1580)
+speed = 700

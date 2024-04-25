@@ -19,6 +19,7 @@ func _ready():
 	get_node("right").body_entered.connect(_on_x_body_entered)
 	get_node("up").body_entered.connect(_on_y_body_entered)
 	get_node("down").body_entered.connect(_on_y_body_entered)
+	get_node("ResetNotepad").next_car.connect(_on_next_car)
 	var engine = get_node("Car/Engine Bay")
 	engine.clicked_on.connect(_on_clicked_on_engine)
 	engine.fixed.connect(_on_fixed_engine)
@@ -61,6 +62,13 @@ func enemy_defeated(instance):
 	if (enemies_to_defeat == 0):
 		$Notepad/LabelGhosts/StrikeThrough.visible = true
 		$Notepad/LabelRemaing.text = "Remaining: 0"
+		if ($Notepad/LabelCar/StrikeThrough.visible == true):
+			get_node("ResetNotepad").show_notepad()
 
 func _on_fixed_engine():
 	$Notepad/LabelCar/StrikeThrough.visible = true
+	if (enemies_to_defeat == 0):
+		get_node("ResetNotepad").show_notepad()
+
+func _on_next_car():
+	get_tree().reload_current_scene()
